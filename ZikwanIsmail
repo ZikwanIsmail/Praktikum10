@@ -1,0 +1,161 @@
+
+package praktikum10_zikwan;
+
+
+public class Praktikum10_Zikwan {
+    public static void main(String[] args) {
+        BangunDatar bd = new BangunDatar("Hitam");
+        System.out.println("Warna Bangun Datar : " + bd.getWarna());
+        System.out.println();
+        
+        Lingkaran lingkaran = new Lingkaran("Merah" , 26.0);
+        System.out.println("Luas Lingkaran : "+lingkaran.luas());
+        System.out.println("Keliling Lingkaran : "+lingkaran.keliling());
+        System.out.println();
+        
+        Segitiga segitiga = new Segitiga("Kuning" , 15, 7);
+        System.out.println("Luas Segitiga : "+ segitiga.luas());
+        System.out.println("Keliling Segitiga : "+ segitiga.keliling());
+        System.out.println();
+        
+        Segiempat segiempat = new Segiempat("Hijau" , 10);
+        System.out.println("Luas Segiempat : "+ segiempat.luas());
+        System.out.println("Keliling Segiempat : "+ segiempat.keliling());
+        System.out.println();
+    }
+    }
+    
+    //class
+    
+    
+package praktikum10_zikwan;
+
+
+public class BangunDatar {
+    private String warna;
+    public BangunDatar(String warna){
+        this.warna = warna;
+    }
+    public BangunDatar(){
+    }
+    public String getWarna(){
+        return warna;
+    }
+    public void setWarna(String warna){
+        this.warna =warna;
+    }
+    public double luas(){
+        return 0;
+    }
+    public double keliling(){
+        return 0;
+    }
+}
+
+
+//kmsn
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package praktikum10_zikwan;
+
+
+    public class Lingkaran extends BangunDatar {
+        private double jari;
+        public Lingkaran(String warna, double jari){
+super(warna);
+this.jari = jari;
+}
+   @Override
+   public double luas(){
+       return Math.PI * this.jari * this.jari;
+   }
+   @Override
+   public double keliling(){
+       return 2 * Math.PI * this.jari;
+   }
+   public double getJari(){
+       return jari;
+   }
+   public void setJari(double jari){
+       this.jari = jari;
+   }
+}
+
+    
+//skcsdkj
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package praktikum10_zikwan;
+
+
+public class Segitiga extends BangunDatar {
+    private double alas;
+    private double tinggi;
+     public Segitiga(String warna, double alas, double tinggi){
+super(warna);
+this.alas = alas;
+this.tinggi = tinggi;
+}
+   @Override
+   public double luas(){
+       return this.alas * this.tinggi/2;
+   }
+   @Override
+   public double keliling(){
+       return 3*this.alas ;
+   }
+   public double getAlas(){
+       return alas;
+   }
+   public void setAlas(double alas){
+       this.alas = alas;
+   }
+   public double getTinggi(){
+       return tinggi;
+   }
+   public void setTinggi(double tinggi){
+       this.tinggi = tinggi;
+   }
+}
+
+//cjdsjfj
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package praktikum10_zikwan;
+
+
+public class Segiempat extends BangunDatar{
+    public double sisi;
+    public Segiempat(String warna, double sisi){
+super(warna);
+this.sisi = sisi;
+}
+   @Override
+   public double luas(){
+       return this.sisi * this.sisi;
+   }
+   @Override
+   public double keliling(){
+       return 4*this.sisi ;
+   }
+   public double getSisi(){
+       return sisi;
+   }
+   public void setSisi(double sisi){
+       this.sisi = sisi;
+   }
+}
+
+
